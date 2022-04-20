@@ -1,0 +1,4 @@
+这个文件夹存在的目的，是作为一个 dummy pry-byebug, 并且，我在 pry_hack 中，
+设定总是优先 require 这个 pry-byebug，而不是项目中的 pry-byebug.
+
+最终的目的是，消除项目中 pry-byebug 对当前全局版本的 pry 的影响。
