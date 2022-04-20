@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-require "pryx/version"
+require 'pryx/version'
+require 'pryx/pry_hack'
 
 module Pryx
-  # code goes here...
 end
-

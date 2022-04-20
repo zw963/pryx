@@ -1,10 +1,9 @@
-name = "pryx"
+name = 'pryx'
 require File.expand_path("../lib/#{name}/version", __FILE__)
 
 Gem::Specification.new do |s|
   s.name                        = name
   s.version                     = Pryx::VERSION
-  s.date                        = Time.now.strftime('%F')
   s.required_ruby_version       = '>= 2.2.2'
   s.authors                     = ['Billy.Zheng(zw963)']
   s.email                       = ['vil963@gmail.com']
@@ -19,7 +18,10 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'pry', '~>0.14'
   s.add_runtime_dependency 'pry-power_assert', '~>0.0.2'
-  s.add_runtime_dependency 'pry-doc'
+  s.add_runtime_dependency 'pry-doc', '~>1.3'
+  s.add_runtime_dependency 'looksee', '~> 4.4'
+  s.add_runtime_dependency 'break'
+  s.add_runtime_dependency 'binding_of_caller', '~> 1.0'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'ritual', '~>0.4'
 end
