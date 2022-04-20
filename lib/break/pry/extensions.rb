@@ -4,7 +4,7 @@ module Break::Pry
   module PryExtensions
     attr_accessor :__break_session__
 
-    def initialize(options = {})
+    def initialize(options={})
       super(options)
 
       @__break_session__ = options[:__break_session__]
@@ -15,7 +15,7 @@ end
 Pry.prepend Break::Pry::PryExtensions
 
 begin
-  require "pry-remote"
+  require 'pry-remote'
 
   module Break::Pry
     class << self
@@ -31,6 +31,7 @@ begin
 
       def run
         return if Break::Pry.current_remote_server
+
         Break::Pry.current_remote_server = self
 
         setup
@@ -46,7 +47,10 @@ begin
     end
   end
 
-  # PryRemote::Server.prepend Break::Pry::PryRemoteServerExtensions
+# Hack for break works with pry_remote.
+# More details, see: https://github.com/gsamokovarov/break/issues/9
+
+# PryRemote::Server.prepend Break::Pry::PryRemoteServerExtensions
 rescue LoadError
   # Do nothing if we cannot require pry-remote.
 end
