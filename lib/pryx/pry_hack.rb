@@ -33,6 +33,8 @@ class Binding
   def _irb(_host=nil)
     warn '[1m[33mloading irb ...[0m'
 
+    IRB.conf[:USE_COLORIZE] = false
+
     self.irb
   end
 end
