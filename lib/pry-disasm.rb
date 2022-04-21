@@ -2,7 +2,6 @@
 
 require 'pry'
 require 'pry-disasm/commands'
-require 'pry-disasm/version'
 
 class PryDisasm
   def self.process(expr)
