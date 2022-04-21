@@ -3,4 +3,3 @@ class PryxTest < Minitest::Test
     assert_equal 100, 100
   end
 end
-

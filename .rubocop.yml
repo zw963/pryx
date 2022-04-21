@@ -1,0 +1,489 @@
+require:
+  - rubocop-minitest
+  - rubocop-graphql
+  - rubocop-rake
+  - rubocop-performance
+  - rubocop/rubycw
+  - rubocop-thread_safety
+
+AllCops:
+  NewCops: enable
+  RubyInterpreters:
+    - ruby
+    - rake
+    - rbx
+    # Include common Ruby source files.
+  Include:
+    - '**/*.rb'
+    - '**/*.arb'
+    - '**/*.axlsx'
+    - '**/*.builder'
+    - '**/*.fcgi'
+    - '**/*.gemfile'
+    - '**/*.gemspec'
+    - '**/*.god'
+    - '**/*.jb'
+    - '**/*.jbuilder'
+    - '**/*.mspec'
+    - '**/*.opal'
+    - '**/*.pluginspec'
+    - '**/*.podspec'
+    - '**/*.rabl'
+    - '**/*.rake'
+    - '**/*.rbuild'
+    - '**/*.rbw'
+    - '**/*.rbx'
+    - '**/*.ru'
+    - '**/*.ruby'
+    - '**/*.spec'
+    - '**/*.thor'
+    - '**/*.watchr'
+    - '**/.irbrc'
+    - '**/.pryrc'
+    - '**/buildfile'
+    - '**/Appraisals'
+    - '**/Berksfile'
+    - '**/Brewfile'
+    - '**/Buildfile'
+    - '**/Capfile'
+    - '**/Cheffile'
+    - '**/Dangerfile'
+    - '**/Deliverfile'
+    - '**/Fastfile'
+    - '**/*Fastfile'
+    - '**/Gemfile'
+    - '**/Guardfile'
+    - '**/Jarfile'
+    - '**/Mavenfile'
+    - '**/Podfile'
+    - '**/Puppetfile'
+    - '**/Rakefile'
+    - '**/Snapfile'
+    - '**/Thorfile'
+    - '**/Vagabondfile'
+    - '**/Vagrantfile'
+  Exclude:
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - '.git/**/*'
+    - 'spec/fixtures/**/*'
+    - 'db/schema.rb'
+    - 'bin/*'
+    - 'script/**/*'
+    - 'components/**/*'
+    - 'lib/pry-remote.rb'
+    - !ruby/regexp /old_and_unused\.rb$/
+
+  TargetRubyVersion:
+    3.1
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Style/CommandLiteral:
+  EnforcedStyle: mixed
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: no_space
+
+Style/AndOr:
+  Description: 'Use &&/|| instead of and/or.'
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Description: 'Checks style of children classes and modules.'
+  Enabled: false
+
+Style/GuardClause:
+  Description: 'Check for conditionals that can be replaced with guard clauses'
+  Enabled: false
+
+Style/Lambda:
+  Description: 'Use the new lambda literal syntax for single-line blocks.'
+  Enabled: false
+
+Style/LambdaCall:
+  Description: 'Use lambda.call(...) instead of lambda.(...).'
+  Enabled: false
+
+Style/NumericLiterals:
+  Description: >-
+                 Add underscores to large numeric literals to improve their
+                 readability.
+  Enabled: false
+
+Style/PerlBackrefs:
+  Description: 'Avoid Perl-style regex back references.'
+  Enabled: false
+
+Naming/PredicateName:
+  Description: 'Check the names of predicate methods.'
+  Enabled: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  Description: "Use spaces inside hash literal braces - or don't."
+  Enabled: false
+
+Style/SpecialGlobalVars:
+  Description: 'Avoid Perl-style global variables.'
+  Enabled: false
+
+Style/WordArray:
+  Description: 'Use %w or %W for arrays of words.'
+  Enabled: false
+
+Metrics/ClassLength:
+  Description: 'Avoid classes longer than 100 lines of code.'
+  Enabled: false
+
+# Metrics/ModuleLength:
+#   Description: 'Avoid modules longer than 100 lines of code.'
+#   Enabled: false
+
+Layout/LineLength:
+  Description: 'Checks that line length does not exceed the configured limit.'
+  StyleGuide: '#max-line-length'
+  Enabled: false
+  VersionAdded: '0.25'
+  VersionChanged: '1.4'
+  Max: 120
+  # To make it possible to copy or click on URIs in the code, we allow lines
+  # containing a URI to be longer than Max.
+  AllowHeredoc: true
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+  # The IgnoreCopDirectives option causes the LineLength rule to ignore cop
+  # directives like '# rubocop: enable ...' when calculating a line's length.
+  IgnoreCopDirectives: true
+  # The IgnoredPatterns option is a list of !ruby/regexp and/or string
+  # elements. Strings will be converted to Regexp objects. A line that matches
+  # any regular expression listed in this option will be ignored by LineLength.
+  IgnoredPatterns: []
+
+Metrics/MethodLength:
+  Description: 'Avoid methods longer than 10 lines of code.'
+  Enabled: false
+
+Style/SingleLineBlockParams:
+  Description: 'Enforces the names of some block params.'
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/ParallelAssignment:
+  Enabled: false
+
+Style/Not:
+  Enabled: false
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Style/LineEndConcatenation:
+  Enabled: false
+
+Style/ClassCheck:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/RescueModifier:
+  Enabled: false
+
+Naming/FileName:
+  Exclude: [Gemfile Capfile]
+
+# Layout/MultilineMethodCallIndentation:
+#   EnforcedStyle: indented
+
+Style/Semicolon:
+  AllowAsExpressionSeparator: true
+
+Metrics/AbcSize:
+  Enabled: false
+
+Style/IfInsideElse:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Enabled: false
+
+Style/MethodCallWithoutArgsParentheses:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Layout/SpaceAroundOperators:
+  Enabled: false
+
+Layout/SpaceInLambdaLiteral:
+  Enabled: false
+
+Style/StabbyLambdaParentheses:
+  Enabled: false
+
+Style/ModuleFunction:
+  Enabled: false
+
+Lint/UnderscorePrefixedVariableName:
+  Enabled: false
+
+Security/JSONLoad:
+  Enabled: false
+
+Layout/ExtraSpacing:
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
+
+Layout/SpaceInsideBlockBraces:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Lint/FlipFlop:
+  Enabled: false
+
+Style/GlobalVars:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+
+Style/TrailingUnderscoreVariable:
+ Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false
+
+# Style/StringLiterals:
+#   Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/TrailingCommaInArguments:
+  Enabled: false
+
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: false
+
+Lint/ShadowingOuterLocalVariable:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+Style/Next:
+  Enabled: false
+
+Style/NegatedIf:
+  Enabled: false
+
+Style/TernaryParentheses:
+  Enabled: false
+
+Style/RedundantSelf:
+  Enabled: false
+
+Layout/HashAlignment:
+  EnforcedColonStyle: table
+
+# 这个默认值就是 false
+Layout/MultilineMethodArgumentLineBreaks:
+  Enabled: false
+
+# Layout/ParameterAlignment:
+#   Description: >-
+#                Align the parameters of a method call if they span more
+#                than one line.
+#   Enabled: false
+
+# 默认 true
+# Layout/FirstArgumentIndentation:
+#  Enabled: true
+
+# 默认 true
+# Layout/ArgumentAlignment:
+#  Enabled: true
+
+# 默认 true
+# Layout/FirstArrayElementIndentation:
+#  EnforcedStyle: consistent
+
+# 默认 true
+# Layout/FirstHashElementIndentation:
+#  Description: 'Checks the indentation of the first key in a hash literal.'
+#  Enabled: false
+
+Naming/MethodParameterName:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Naming/VariableNumber:
+  Enabled: false
+
+# new added
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+Lint/BinaryOperatorWithIdenticalOperands:
+ Enabled: true
+Lint/DeprecatedOpenSSLConstant:
+ Enabled: true
+Lint/DuplicateElsifCondition:
+  Enabled: true
+Lint/DuplicateRescueException:
+  Enabled: true
+Lint/EmptyConditionalBody:
+  Enabled: true
+Lint/FloatComparison:
+  Enabled: true
+Lint/MissingSuper:
+  Enabled: true
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+Lint/OutOfRangeRegexpRef:
+  Enabled: true
+Lint/RaiseException:
+  Enabled: true
+Lint/SelfAssignment:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
+Lint/TopLevelReturnWithArgument:
+  Enabled: true
+Lint/UnreachableLoop:
+  Enabled: true
+Lint/AmbiguousOperatorPrecedence:
+  Enabled: false
+Style/AccessorGrouping:
+  Enabled: true
+Style/ArrayCoercion:
+  Enabled: true
+Style/BisectedAttrAccessor:
+  Enabled: true
+Style/CaseLikeIf:
+  Enabled: true
+Style/ExplicitBlockArgument:
+  Enabled: true
+Style/ExponentialNotation:
+  Enabled: true
+Style/GlobalStdStream:
+  Enabled: false
+Style/HashAsLastArrayItem:
+  Enabled: true
+Style/HashEachMethods:
+  Enabled: true
+Style/HashLikeCase:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+Style/OptionalBooleanParameter:
+  Enabled: true
+Style/RedundantAssignment:
+  Enabled: true
+Style/RedundantFetchBlock:
+  Enabled: true
+Style/RedundantFileExtensionInRequire:
+  Enabled: true
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+Style/RedundantRegexpEscape:
+  Enabled: true
+Style/SingleArgumentDig:
+  Enabled: true
+Style/SlicingWithRange:
+  Enabled: true
+Style/StringConcatenation:
+  Enabled: true
+Performance/AncestorsInclude:
+  Enabled: true
+Performance/BigDecimalWithNumericArgument:
+  Enabled: false
+Performance/RedundantSortBlock:
+  Enabled: true
+Performance/RedundantStringChars:
+  Enabled: true
+Performance/ReverseFirst:
+  Enabled: true
+Performance/SortReverse:
+  Enabled: true
+Performance/Squeeze:
+  Enabled: true
+Performance/StringInclude:
+  Enabled: true
+Bundler/OrderedGems:
+  Enabled: false
+Performance/RedundantBlockCall:
+  Enabled: false
+Minitest/AssertInDelta:
+  Enabled: false
+Minitest/MultipleAssertions:
+  Enabled: false
+
+# Rails/RefuteMethods:
+#   Enabled: false
+# Rails/AssertNot:
+#   Enabled: false
+# Rails/FindEach:
+#   Enabled: false
+Rails/DurationArithmetic:
+  Enabled: false
+Rails/RefuteMethods:
+  Enabled: false
+Rails/Output:
+  Enabled: false
+Rails/NegateInclude:
+  Enabled: false
+
+GraphQL/OrderedArguments:
+  Enabled: false
+
+GraphQL/OrderedFields:
+  Enabled: false
+GraphQL/FieldDefinitions:
+  Enabled: false
+# 这个很容易出错，无法知道真实意图，也许就是不转义，例如：'#{keyword}'
+Lint/InterpolationCheck:
+  Enabled: false
+
+# 这个目前会引起语法错误.
+Style/SoleNestedConditional:
+  Enabled: false
+
+Style/HashSyntax:
+  # always 是默认值
+  EnforcedShorthandSyntax: either

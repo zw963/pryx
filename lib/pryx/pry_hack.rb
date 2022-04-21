@@ -30,7 +30,7 @@ class Binding
     end
   end
 
-  def _irb(_host=nil, _port=nil, _options={})
+  def _irb(_host=nil)
     warn '[1m[33mloading irb ...[0m'
 
     self.irb
@@ -49,14 +49,14 @@ module Kernel
       port = 9876
     end
 
-    pry3(caller, remote:, port:)
+    pry3(caller, remote: remote, port: port)
 
     # 这里如果有代码, 将会让 pry! 进入这个方法, 因此保持为空.
   end
 
   # 注意：pryr 总是会被拦截。
   def pryr
-    pry3(caller = 2, remote: '0.0.0.0', port: 9876)
+    pry3(caller=2, remote: '0.0.0.0', port: 9876)
   end
 
   # 在 pry! 之前如果输入这个，会让下次执行的 pry! 被拦截一次， 而不管之前是否有执行过 pry!
@@ -72,7 +72,7 @@ module Kernel
     require 'pry-state'
     ENV['Pry_was_started'] = 'true'
 
-    pry3(caller, remote:, port:)
+    pry3(caller, remote: remote, port: port)
 
     # 这里如果有代码, 将会让 pry! 进入这个方法, 因此保持为空.
   end

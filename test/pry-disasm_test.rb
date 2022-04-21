@@ -9,4 +9,3 @@ class PryDisasmTest < Minitest::Test
     PryDisasm.process(method(:say_hello))
   end
 end
-
