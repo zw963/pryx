@@ -1,3 +1,12 @@
+	== 0.4.0 2022-04-23
+	* Add or Enable following pry plugins
+	
+	pry-aa_ancestors
+	pry-doc
+	pry-hier
+	pry-yes
+	pry-power_assert
+	
 	== 0.3.1 2022-04-23
 	* Add pry alias for break next/step/watch.
 	* Add rack middleware for roda/rails only break one time per request when use pry!.
