@@ -1,8 +1,8 @@
 require 'awesome_print'
 
-AwesomePrint.defaults = {
-  index: false
-}
+# AwesomePrint.defaults = {
+#   index: false
+# }
 
 if defined? AwesomePrint
   if defined? Pry
