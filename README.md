@@ -2,11 +2,6 @@
 
 Three Virtues of a Programmer: Laziness, Impatience, and Hubris. -- Larry Wall, the author of Perl Programming language.
 
-
-## Philosophy
-
-TODO: Write philosophy
-
 ## Getting Started
 
 Don't add this gem into bundler's Gemfile.
@@ -82,17 +77,24 @@ we have irb1 and irb2 too.
 ### pry3
 
 It just normal `binding.pry`, that is, will always be intercept if code can reach.
-but above plugins and library all correct configured.
+but above plugins and libraries all correct configured.
 
 we have another Kernel#pry?, which enable `pry-state` automatically, see [pry-state](https://github.com/SudhagarS/pry-state)
+
+### we have two binary, pryx, irbx
+
+pryx is same as pry, but, with plugins and libraries correct configured.
+
+irbx is same for irb.
+
+## Philosophy
+
+This gem is design to maximum limit take effect current ruby program, so, it should be safe to use it.
+But, you should only use it when development, though, it was tested when use in docker-compose container too.
 
 ## Support
 
   * MRI 2.2+
-
-## Dependency
-
-No known limit.
 
 ## History
 
