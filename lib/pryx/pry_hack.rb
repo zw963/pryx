@@ -38,20 +38,10 @@ module Kernel
 
     ENV['Pry_was_started'] = 'true'
 
-    if background?
-      remote = '0.0.0.0'
-      port = 9876
-    end
-
     pry3(2, remote: remote, port: port)
 
     # 这里如果有代码, 将会让 pry! 进入这个方法, 因此保持为空.
   end
-
-  # 注意：pryr 总是会被拦截。
-  # def pryr
-  #   pry3(remote: '0.0.0.0', port: 9876)
-  # end
 
   # 在 pry! 之前如果输入这个，会让下次执行的 pry! 被拦截一次， 而不管之前是否有执行过 pry!
   def repry!
@@ -74,6 +64,8 @@ module Kernel
   # 等价于默认的 binding.pry, 会反复被拦截。
   # 起成 pry3 这个名字，也是为了方便直接使用。
   def pry3(caller=1, remote: nil, port: 9876)
+    remote = '0.0.0.0' if Pryx::Background.background?
+
     binding.of_caller(caller)._pry(remote, port)
   end
 
@@ -89,21 +81,6 @@ module Kernel
       ENV['Pry2_should_start'] = nil
       binding.of_caller(caller)._pry(remote, port)
     end
-  end
-
-  # 如果是前台进程，则这个进程的组ID（pgid）一定会等于当前 terminal 的gid （tpgid）
-  # 否则，如果不等，那么就是后台进程。
-  # system("ps -e -o pid,pgid,tpgid |grep '^\s*#{pid}' |awk '$2==$3 {exit 1}'")
-  # system("\\cat /proc/#{pid}/stat |awk '$5==$8 {exit 1}'")
-  def background?(pid=$$)
-    # 考虑是否需要验证
-    ary = File.read("/proc/#{pid}/stat").split(' ').reverse
-    # 执行 reverse 再处理，是因为要考虑文件名包含空格因素。例如：‘hello) (world’
-    (ary[46] != ary[48]) && !$stdout.tty?
-  end
-
-  def foreground?(pid=$$)
-    not background?(pid)
   end
 
   def notify_send(msg)
