@@ -81,11 +81,21 @@ but above plugins and libraries all correct configured.
 
 we have another Kernel#pry?, which enable `pry-state` automatically, see [pry-state](https://github.com/SudhagarS/pry-state)
 
-### we have two binary, pryx, irbx
+### we have 3 binary, pryx, irbx, pry! installed
 
 pryx is same as pry, but, with plugins and libraries correct configured.
 
-irbx is same for irb.
+irbx is same things for irb.
+
+pry! is same as pry-remote command, when `pry!` was intercepted in a background process, 
+you can run pry! in terminal connnect to it.
+
+if your's pry-remote server started background on another host, or on a container, you man need
+specify hostname and port, e.g. connnect to 192.168.1.100, with port 9876
+
+```sh
+$: pry! -s 192.168.1.100 -p 9876
+```
 
 ## Philosophy
 
