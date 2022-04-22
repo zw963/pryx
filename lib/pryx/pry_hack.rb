@@ -29,19 +29,11 @@ class Binding
       self.pry
     end
   end
-
-  def _irb(_host=nil)
-    warn '[1m[33mloading irb ...[0m'
-
-    IRB.conf[:USE_COLORIZE] = false
-
-    self.irb
-  end
 end
 
 module Kernel
   # 运行 pry! 会被拦截, 且只会被拦截一次.
-  def pry!(caller=2, remote: nil, port: 9876)
+  def pry!(remote: nil, port: 9876)
     return unless ENV['Pry_was_started'].nil?
 
     ENV['Pry_was_started'] = 'true'
@@ -51,15 +43,15 @@ module Kernel
       port = 9876
     end
 
-    pry3(caller, remote: remote, port: port)
+    pry3(2, remote: remote, port: port)
 
     # 这里如果有代码, 将会让 pry! 进入这个方法, 因此保持为空.
   end
 
   # 注意：pryr 总是会被拦截。
-  def pryr
-    pry3(caller=2, remote: '0.0.0.0', port: 9876)
-  end
+  # def pryr
+  #   pry3(remote: '0.0.0.0', port: 9876)
+  # end
 
   # 在 pry! 之前如果输入这个，会让下次执行的 pry! 被拦截一次， 而不管之前是否有执行过 pry!
   def repry!
@@ -68,13 +60,13 @@ module Kernel
 
   # 和 pry! 的差别就是，pry? 使用 pry-state 插件输出当前 context 的很多变量内容。
   # 注意：不需要总是开启 pry-state，因为有时候会输出太多内容，造成刷屏。
-  def pry?(caller=2, remote: nil, port: 9876)
+  def pry?(remote: nil, port: 9876)
     return unless ENV['Pry_was_started'].nil?
 
     require 'pry-state'
     ENV['Pry_was_started'] = 'true'
 
-    pry3(caller, remote: remote, port: port)
+    pry3(2, remote: remote, port: port)
 
     # 这里如果有代码, 将会让 pry! 进入这个方法, 因此保持为空.
   end
@@ -94,33 +86,8 @@ module Kernel
 
   def pry2(caller=1, remote: nil, port: 9876)
     if ENV['Pry2_should_start'] == 'true'
-      # 首先恢复 Pry2_is_start 为未启动, 避免稍后的 pry2 再次被拦截.
       ENV['Pry2_should_start'] = nil
       binding.of_caller(caller)._pry(remote, port)
-    end
-  end
-
-  def reirb!
-    ENV['IRB_was_started'] = nil
-  end
-
-  def irb!
-    return unless ENV['IRB_was_started'].nil?
-
-    ENV['IRB_was_started'] = 'true'
-
-    binding.of_caller(1)._irb
-  end
-
-  def irb1
-    ENV['IRB2_should_start'] = 'true'
-  end
-
-  def irb2(caller=1, remote: nil, port: 9876)
-    if ENV['IRB2_should_start'] == 'true'
-      # 首先恢复 Pry2_is_start 为未启动, 避免稍后的 pry2 再次被拦截.
-      ENV['IRB2_should_start'] = nil
-      binding.of_caller(caller)._irb
     end
   end
 
@@ -147,7 +114,7 @@ module Kernel
   end
 end
 
-# Hack roda, 在每一次发送请求之前，总是设定 ENV['Pry_was_started'] to nil.
+# Hack for roda/rails, 在每一次发送请求之前，总是设定 ENV['Pry_was_started'] to nil.
 # 这可以确保，pry! 总是会被拦截，但是仅仅只会被拦截一次。
 begin
   require 'roda'
