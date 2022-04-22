@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version       = '>= 2.2.2'
   s.authors                     = ['Billy.Zheng(zw963)']
   s.email                       = ['vil963@gmail.com']
-  s.summary                     = ''
+  s.summary                     = 'pry extension tools!'
   s.description                 = ''
   s.homepage                    = 'http://github.com/zw963/pryx'
   s.license                     = 'MIT'
