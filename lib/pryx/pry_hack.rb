@@ -11,6 +11,7 @@ class Binding
     end
     require 'pryx/ap_hack'
     require 'pryx/break_hack'
+    require 'pry-power_assert'
     # 这个必须在最后才有效, 但是目前存在一个问题，就是会将 pry3, pry! 加入 stacks
     require 'pry-stack_explorer'
 
