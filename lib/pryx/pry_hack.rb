@@ -93,20 +93,34 @@ end
 
 # Hack for roda/rails, 在每一次发送请求之前，总是设定 ENV['Pry_was_started'] to nil.
 # 这可以确保，pry! 总是会被拦截，但是仅仅只会被拦截一次。
+
+class Pryx::PryHackForRodaRailsMiddleware
+  attr_reader :app
+
+  def initialize(app)
+    @app = app
+  end
+
+  def call(env)
+    ENV['Pry_was_started'] = nil
+    @app.call(env)
+  end
+end
+
 begin
   require 'roda'
-  class PryHackRodaMiddleware
-    attr_reader :app
+  Roda.use Pryx::PryHackForRodaRailsMiddleware
+rescue LoadError
+end
 
-    def initialize(app)
-      @app = app
-    end
-
-    def call(env)
-      ENV['Pry_was_started'] = nil
-      @app.call(env)
-    end
+begin
+  require 'active_support/lazy_load_hooks'
+  ActiveSupport.on_load(:before_configuration) do
+    # because exits less command error when use in container, use irb instead.
+    # require 'pry'
+    # require 'pryx'
+    # Rails.application.config.console = Pry
+    Rails.application.config.middleware.use Pryx::PryHackForRodaRailsMiddleware
   end
-  Roda.use PryHackRodaMiddleware
 rescue LoadError
 end
