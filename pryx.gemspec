@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'pry', '~>0.14'
   s.add_runtime_dependency 'pry-doc', '~>1.3'
   s.add_runtime_dependency 'pry-power_assert', '~>0.0.2'
+  s.add_runtime_dependency 'pry-hier', '~>0.1'
   s.add_runtime_dependency 'pry-stack_explorer', '~>0.6'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'ritual', '~>0.4'
