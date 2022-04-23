@@ -10,8 +10,7 @@ class Binding
       require 'pry'
     end
 
-    require 'pryx/ap_hack'
-    require 'pryx/break_hack'
+    require 'pryx/common_plugins'
     require 'pryx/pry_plugins'
 
     if host

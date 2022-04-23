@@ -70,21 +70,22 @@ $: RUBYOPT+='-rpryx_irb' ruby your_file.rb # add irb! in your_file for start pry
 
 Following feature both available when start a Pry or IRB session:
 
-1.  add `next/step/up/down` command for debug, use [break](https://github.com/gsamokovarov/break)
-2.  add `Kernel#ls1`(use ls1 to avoid conflict with pry builtin ls command), see [looksee](https://github.com/oggy/looksee)
-3.  Use AwesomePrint for printer. see [https://github.com/awesome-print/awesome_print]
+1.  Add `next/step/up/down` command for debug, use [break](https://github.com/gsamokovarov/break)
+2.  Add `Kernel#ls1`(use ls1 to avoid conflict with pry builtin ls command), see [looksee](https://github.com/oggy/looksee)
+3.  Use `ap` for pretty print. see [awesome-print](https://github.com/awesome-print/awesome_print)
+4.  Use `Clipboard.copy` or `Clipboard.paste` to interactive with system clipboard. see [clipboard](https://github.com/janlelis/clipboard)
 
 Following is pry command available only after start a Pry session:
 
-1.  add `$/?` command for see source, see [pry-doc](https://github.com/pry/pry-doc)
+1.  Add `$/?` command for see source, see [pry-doc](https://github.com/pry/pry-doc)
 2.  pry-remote debug support. you still use `pry!` no changes, it will use `pry-remote` automatically
     if current ruby process was running on backround, then, it will use pry-remote, and listen on 0.0.0.0:9876,
     Then, you can connect to it from another terminal! see [pry-remote](https://github.com/Mon-Ouie/pry-remote)
-3.  add `pa` command, see [pry-power_assert](https://github.com/yui-knk/pry-power_assert)
-4.  add `hier` command for print the class hierarchies, see [pry-hier](https://github.com/phaul/pry-hier)
-5.  add `pry-aa_ancestors` command for print the class hierarchy, see [pry-aa_ancestors](https://github.com/tbpgr/pry-aa_ancestors)
-6.  add `up/down/frame/stack` command, see [pry-stack_explorer](https://github.com/pry/pry-stack_explorer)
-7.  add `yes` or `y` command, see [pry-yes](https://github.com/christofferh/pry-yes)
+3.  Add `pa` command, see [pry-power_assert](https://github.com/yui-knk/pry-power_assert)
+4.  Add `hier` command for print the class hierarchies, see [pry-hier](https://github.com/phaul/pry-hier)
+5.  Add `pry-aa_ancestors` command for print the class hierarchy, see [pry-aa_ancestors](https://github.com/tbpgr/pry-aa_ancestors)
+6.  Add `up/down/frame/stack` command, see [pry-stack_explorer](https://github.com/pry/pry-stack_explorer)
+7.  Add `yes` or `y` command, see [pry-yes](https://github.com/christofferh/pry-yes)
 
 ### Kernel#pry1 Kernel#pry2  (sorry for this bad name, please create a issue you have a better one)
 

@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'awesome_print', '~>1.9'
   s.add_runtime_dependency 'break', '~>0.30'
   s.add_runtime_dependency 'looksee', '~>4.4'
+  s.add_runtime_dependency 'clipboard', '~>1.3'
   s.add_runtime_dependency 'pry', '~>0.14'
   s.add_runtime_dependency 'pry-doc', '~>1.3'
   s.add_runtime_dependency 'pry-power_assert', '~>0.0.2'
