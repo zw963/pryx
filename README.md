@@ -74,7 +74,7 @@ Following feature both available when start a Pry or IRB session:
 2.  add `Kernel#ls1`(use ls1 to avoid conflict with pry builtin ls command), see [looksee](https://github.com/oggy/looksee)
 3.  Use AwesomePrint for printer. see [https://github.com/awesome-print/awesome_print]
 
-Following feature only available when start a Pry session:
+Following is pry command available only after start a Pry session:
 
 1.  add `$/?` command for see source, see [pry-doc](https://github.com/pry/pry-doc)
 2.  pry-remote debug support. you still use `pry!` no changes, it will use `pry-remote` automatically
