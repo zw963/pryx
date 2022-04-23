@@ -128,8 +128,11 @@ $: pry! -s 192.168.1.100 -p 9876
 
 ## Philosophy
 
-This gem is design to maximum limit take effect current ruby program, so, it should be safe to use it.
-But, you should only use it when development, though, it was tested when use in docker-compose container too.
+This gem is design to Minimal impact on target ruby code, in fact, after `require 'pryx'` or `RUBYOPT='-rpryx'`
+(they do same thing), except several instance method be defined on Kernel, some gems add to $LOAD_PATH, and
+ready to require (but still not require), no more. so, it should be safe to use it.
+
+But, you should only use it in development, though, it was tested is run in container(alpine) too.
 
 ## Support
 
