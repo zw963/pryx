@@ -52,14 +52,6 @@ module Kernel
     # 这里如果有代码, 将会让 pry! 进入这个方法, 因此保持为空.
   end
 
-  # 等价于默认的 binding.pry, 会反复被拦截。
-  # 起成 pry3 这个名字，也是为了方便直接使用。
-  def pry3(caller=1, remote: nil, port: 9876)
-    remote = '0.0.0.0' if Pryx::Background.background?
-
-    binding.of_caller(caller)._pry(remote, port)
-  end
-
   def pry1
     ENV['Pry2_should_start'] = 'true'
   end
@@ -70,8 +62,18 @@ module Kernel
   def pry2(caller=1, remote: nil, port: 9876)
     if ENV['Pry2_should_start'] == 'true'
       ENV['Pry2_should_start'] = nil
-      binding.of_caller(caller)._pry(remote, port)
+      pry3(2, remote: remote, port: port)
     end
+  end
+
+  # 等价于默认的 binding.pry, 会反复被拦截。
+  # 起成 pry3 这个名字，也是为了方便直接使用。
+  def pry3(caller=1, remote: nil, port: 9876)
+    remote = '0.0.0.0' if Pryx::Background.background?
+
+    require 'binding_of_caller'
+
+    binding.of_caller(caller)._pry(remote, port)
   end
 
   def notify_send(msg)

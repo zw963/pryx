@@ -2,8 +2,6 @@ class Binding
   def _irb(_host=nil)
     warn '[1m[33mloading irb ...[0m'
 
-    require 'binding_of_caller'
-
     if defined? Break and defined? IRB
       # This is need for work with looksee better.
       # See discuss on https://github.com/oggy/looksee/issues/57
@@ -26,7 +24,9 @@ module Kernel
 
     ENV['IRB_was_started'] = 'true'
 
-    binding.of_caller(1)._irb
+    require 'binding_of_caller'
+
+    irb3(2)
   end
 
   def reirb!
@@ -37,10 +37,19 @@ module Kernel
     ENV['IRB2_should_start'] = 'true'
   end
 
-  def irb2(caller=1, remote: nil, port: 9876)
+  def irb2
     if ENV['IRB2_should_start'] == 'true'
       ENV['IRB2_should_start'] = nil
-      binding.of_caller(caller)._irb
+
+      require 'binding_of_caller'
+
+      irb3(2)
     end
+  end
+
+  def irb3(caller=1)
+    require 'binding_of_caller'
+
+    binding.of_caller(caller)._irb
   end
 end
