@@ -86,6 +86,9 @@ Following is pry command available only after start a Pry session:
 5.  Add `pry-aa_ancestors` command for print the class hierarchy, see [pry-aa_ancestors](https://github.com/tbpgr/pry-aa_ancestors)
 6.  Add `up/down/frame/stack` command, see [pry-stack_explorer](https://github.com/pry/pry-stack_explorer)
 7.  Add `yes` or `y` command, see [pry-yes](https://github.com/christofferh/pry-yes)
+8.  Add `pry-disam`, Check following screenshot for a example:
+
+![pry-disasm](images/disasm.png)
 
 ### Kernel#pry1 Kernel#pry2  (sorry for this bad name, please create a issue you have a better one)
 
@@ -129,10 +132,19 @@ $: pry! -s 192.168.1.100 -p 9876
 ## Philosophy
 
 This gem is design to Minimal impact on target ruby code, in fact, after `require 'pryx'` or `RUBYOPT='-rpryx'`
-(they do same thing), except several instance method be defined on Kernel, some gems add to $LOAD_PATH, and
-ready to require (but still not require), no more. so, it should be safe to use it.
+(they do same thing), only several instance method be defined on Kernel, and several gems add to $LOAD_PATH, 
+but not load, ready to require it, no more. so, it should be safe to use it, either affect performance nor
+namespace/variables etc.
 
 But, you should only use it in development, though, it was tested is run in container(alpine) too.
+
+
+## Limit
+
+  1. `break` not work well if you add more than one break point, but still use `next` goto the next break point,
+     See https://github.com/gsamokovarov/break/issues/12
+  2. because `pry!` use binding.of\_caller, when work with pry-stack\_explorer up command, you can see two
+     more stack get pushed. so, you have to up 3 times instead 1 time in normal case.
 
 ## Support
 
