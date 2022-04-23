@@ -1,7 +1,5 @@
 # 注意如果开启 pry-stack_explorer, 就不要使用 debugger, 因为进入新的上下文后, pry-stack_explorer 将失效.
 
-require 'binding_of_caller'
-
 class Binding
   def _pry(host=nil, port=nil, options={})
     if host
