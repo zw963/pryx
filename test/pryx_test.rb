@@ -22,4 +22,25 @@ class PryxTest < Minitest::Test
     assert Kernel.method(:irb2)
     assert Binding.instance_method(:_irb)
   end
+
+  def test_ap
+    assert_nil ap([1, 2, 3])
+  end
+
+  def test_preloaded_gems_with_use_pryx_irb
+    assert PryRemote
+    assert Pry
+    assert Break
+    assert AwesomePrint
+  end
+
+  def test_loaded_pry_plugins
+    require 'pryx/pry_plugins'
+    assert PryDoc
+    assert PryPowerAssert
+    assert PryYes
+    assert TTY::Tree # pry-hier
+    assert String.instance_method(:surround) # pry-aa_ancestors
+    assert PryStackExplorer
+  end
 end
