@@ -26,6 +26,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'pry-aa_ancestors'
   s.add_runtime_dependency 'pry-stack_explorer', '~>0.6'
   s.add_development_dependency 'rake'
-  s.add_development_dependency 'ritual', '~>0.4'
+  s.add_development_dependency 'ritual', '~>0.5'
   s.metadata['rubygems_mfa_required'] = 'true'
 end
