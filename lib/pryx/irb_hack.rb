@@ -1,8 +1,8 @@
-require 'binding_of_caller'
-
 class Binding
   def _irb(_host=nil)
     warn '[1m[33mloading irb ...[0m'
+
+    require 'binding_of_caller'
 
     if defined? Break and defined? IRB
       # This is need for work with looksee better.
