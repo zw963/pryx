@@ -10,7 +10,7 @@
 # 被覆写的方法 灰色 30
 
 module Kernel
-  def load_looksee
+  def _load_looksee
     case RbConfig::CONFIG['ruby_version']
     when '1.9.0'...'2.1.0'
       require 'old_looksee'
@@ -23,12 +23,12 @@ module Kernel
   end
 
   def ls1(*args)
-    load_looksee unless defined? Looksee
+    _load_looksee unless defined? Looksee
     Looksee[self, *args, :noprivate]
   end
 
   def ls2(*args)
-    load_looksee unless defined? Looksee
+    _load_looksee unless defined? Looksee
     Looksee[self, *args]
   end
 end
