@@ -3,7 +3,14 @@ require 'pry-disasm/commands'
 
 class PryDisasm
   def self.process(expr)
-    str = RubyVM::InstructionSequence.disasm(expr)
+    case expr
+    when Method, Proc
+      str = RubyVM::InstructionSequence.disasm(expr)
+    when String
+      str = RubyVM::InstructionSequence.compile(expr).disasm
+    else
+      return puts "Error: The command 'disasm' requires Method/Proc/String instance."
+    end
 
     lines = str.split("\n")
     lines[0].gsub!(/=+/) { |s| "\033[0;32m#{s}\033[0m" }

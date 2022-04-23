@@ -6,7 +6,7 @@ Pry::Commands.create_command 'disasm' do
   group 'Context'
 
   def process
-    expr = eval(arg_string)
+    expr = target.eval(arg_string)
     PryDisasm.process(expr)
   end
 end

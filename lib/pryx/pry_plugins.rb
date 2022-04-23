@@ -7,6 +7,8 @@ Pry.commands.alias_command 'y', 'yes'
 
 require 'pry-hier'
 
+require 'pry-disasm'
+
 require 'pry-aa_ancestors'
 Pry::Commands.alias_command 'aa', 'aa_ancestors'
 
