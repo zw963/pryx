@@ -1,3 +1,12 @@
+
+	== 0.6.0 2022-04-23
+
+	* Add pry-rescue gem, it not auto required by default, but, you can use pry-rescue command from command line.
+	* Add clipboard gem, for copy/paste from/into system clipboard.
+	* Add pry-disasm, see example in README.
+	* Update ensure not expose any constant into ruby code after require 'pryx'
+	* Add many test, introduce m gem to run test file one by one individually.
+	
 	== 0.5.0 2022-04-23
 
 	* Add more example and image to README.md
