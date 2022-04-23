@@ -84,8 +84,8 @@ Following is pry command available only after start a Pry session:
 4.  add `hier` command for print the class hierarchies, see [pry-hier](https://github.com/phaul/pry-hier)
 5.  add `pry-aa_ancestors` command for print the class hierarchy, see [pry-aa_ancestors](https://github.com/tbpgr/pry-aa_ancestors)
 6.  add `up/down/frame/stack` command, see [pry-stack_explorer](https://github.com/pry/pry-stack_explorer)
-2.  add `yes` or `y` command, see [pry-yes](https://github.com/christofferh/pry-yes)
-   
+7.  add `yes` or `y` command, see [pry-yes](https://github.com/christofferh/pry-yes)
+
 ### Kernel#pry1 Kernel#pry2  (sorry for this bad name, please create a issue you have a better one)
 
 pry2 do nothing, but it will be interceptd and start a pry session only after pry1 is running.
@@ -106,7 +106,10 @@ but above plugins and libraries all correct configured.
 
 we have another Kernel#pry?, which enable `pry-state` automatically, see [pry-state](https://github.com/SudhagarS/pry-state)
 
-### We add three command line command, pryx, irbx, pry!
+### Add command from command line, rescue, kill-pry-rescue, pryx, irbx, pry!
+
+`rescue` and `kill-pry-rescue` come from `pry-rescue` gem, it not load by default, but you can use rescue command from command line directly.
+see [pry-rescue](https://github.com/ConradIrwin/pry-rescue)
 
 pryx is same as pry, but, with plugins and libraries correct configured.
 
