@@ -4,7 +4,7 @@ require File.expand_path("../lib/#{name}/version", __FILE__)
 Gem::Specification.new do |s|
   s.name                        = name
   s.version                     = Pryx::VERSION
-  s.required_ruby_version       = '>= 2.2.2'
+  s.required_ruby_version       = '>= 2.6'
   s.authors                     = ['Billy.Zheng(zw963)']
   s.email                       = ['vil963@gmail.com']
   s.summary                     = 'pry extension tools!'

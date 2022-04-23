@@ -129,7 +129,7 @@ But, you should only use it when development, though, it was tested when use in 
 
 ## Support
 
-  * MRI 2.2+
+  * MRI 2.6+
 
 ## History
 
