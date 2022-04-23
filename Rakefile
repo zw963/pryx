@@ -1,10 +1,7 @@
-require 'rake/testtask'
 require 'ritual'
 
-Rake::TestTask.new do |t|
-  t.libs = ['lib', 'test']
-  t.ruby_opts = ['-rminitest/autorun', '-rminitest/pride']
-  t.test_files = FileList['test/**/*_test.rb']
+task :default do
+  sh "m test/pryx/pryx_test.rb"
+  sh "m test/pryx/pryx_irb_test.rb"
+  sh "m test/pryx/pry-disasm_test.rb"
 end
-
-task default: :test
