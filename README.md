@@ -1,4 +1,4 @@
-# Pryx [![Build Status](https://travis-ci.com/zw963/pryx.svg?branch=master)](https://travis-ci.com/zw963/pryx) [![Gem Version](https://badge.fury.io/rb/pryx.svg)](http://badge.fury.io/rb/pryx)
+# Pryx ![download](https://ruby-gem-downloads-badge.herokuapp.com/pryx?type=total)[![Build Status](https://travis-ci.com/zw963/pryx.svg?branch=master)](https://travis-ci.com/zw963/pryx) [![Gem Version](https://badge.fury.io/rb/pryx.svg)](http://badge.fury.io/rb/pryx)
 
 Three Virtues of a Programmer: Laziness, Impatience, and Hubris. -- Larry Wall, the author of Perl Programming language.
 
