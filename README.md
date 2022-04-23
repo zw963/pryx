@@ -9,6 +9,8 @@ Don't add this gem into bundler's Gemfile.
 Instead, install it directly via RubyGems
 
     $ gem install pryx
+	
+Then use can use pryx cross all your's project.	
 
 ## Usage
 
@@ -30,9 +32,32 @@ $: RUBYOPT+='-rpryx' ruby your_file.rb  # add pry! in your_file for start pry se
 
 Then, try add `pry!` into your's ruby code, then run it, have fun!
 
-## useful command add directly to Kernel#
+Following is a example, assume we have test.rb, it content like this:
 
-### pry!   
+```rb
+# test.rb
+3.times do
+  pry!
+  puts 'hello'
+end
+```
+
+Then, when you run `RUBYOPT='-rpryx' ruby test.rb`
+
+![pry.png](images/pry!.png)
+
+You can even connect to a pry session started from remote or background process 
+use http connection.
+
+![pry_remote.png](images/pry_remote.png)
+
+
+Until now, you've only seen the tip of the iceberg, please have a try.
+
+
+## useful command which added directly to Kernel#
+
+### Kernel#pry!   
    
 start a pry session, this session only can be intercept once if add into a loop.
 when used with a rails/roda web server, it only intercept one per request.
@@ -61,7 +86,7 @@ Following feature only available when start a Pry session:
 6.  add `up/down/frame/stack` command, see [pry-stack_explorer](https://github.com/pry/pry-stack_explorer)
 2.  add `yes` or `y` command, see [pry-yes](https://github.com/christofferh/pry-yes)
    
-### pry1 pry2  (sorry for this bad name, please create a issue you have a better one)
+### Kernel#pry1 Kernel#pry2  (sorry for this bad name, please create a issue you have a better one)
 
 pry2 do nothing, but it will be interceptd and start a pry session only after pry1 is running.
 
@@ -69,26 +94,26 @@ I haven use this hack for avoid pry session start on working place.
 
 You know what i means.
 
-### irb1 irb2 
+### Kernel#irb1 Kernel#irb2 
 
 IRB equivalent for pry1, pry2
 we have irb1 and irb2 too.
 
-### pry3
+### Kernel#pry3
 
 It just normal `binding.pry`, that is, will always be intercept if code can reach.
 but above plugins and libraries all correct configured.
 
 we have another Kernel#pry?, which enable `pry-state` automatically, see [pry-state](https://github.com/SudhagarS/pry-state)
 
-### we have 3 binary, pryx, irbx, pry! installed
+### We add three command line command, pryx, irbx, pry!
 
 pryx is same as pry, but, with plugins and libraries correct configured.
 
 irbx is same things for irb.
 
-pry! is same as pry-remote command, when `pry!` was intercepted in a background process, 
-you can run pry! in terminal connnect to it.
+pry! just a alias to `pry-remote` command, when `Kernel#pry!` was intercepted in a background process, 
+you can run `pry!` directly in terminal connect to it.
 
 if your's pry-remote server started background on another host, or on a container, you man need
 specify hostname and port, e.g. connnect to 192.168.1.100, with port 9876
