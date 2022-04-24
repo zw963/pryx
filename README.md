@@ -55,6 +55,18 @@ use http connection.
 Until now, you've only seen the tip of the iceberg, please have a try.
 
 
+If you prefer to use IRB over Pry, use can add following code instead.
+
+```sh
+$: export RUBYOPT+=' -rpryx_irb'
+$: ruby your_file.rb              # add pry! in your_file for start pry session
+```
+
+__WARN__: `require 'pryx_irb'` will enable many gems by default in your's ruby code.
+so, prefer to use `require 'pryx'`, because latter almost not affect your's code,
+only several methods added into Kernel#, and gems only be require if you run invoke
+those added methods.
+
 ## useful command which added directly to Kernel#
 
 ### Kernel#pry!   
@@ -70,7 +82,7 @@ $: RUBYOPT+='-rpryx_irb' ruby your_file.rb # add irb! in your_file for start pry
 
 Following feature both available when start a Pry or IRB session:
 
-1.  Add `next/step/up/down` command for debug, use [break](https://github.com/gsamokovarov/break)
+1.  Add `next/step/up/down` command for debug, use [break](https://github.com/gsamokovarov/break) [pry-stack_explorer](https://github.com/pry/pry-stack_explorer)
 2.  Add `Kernel#ls1`(use ls1 to avoid conflict with pry builtin ls command), see [looksee](https://github.com/oggy/looksee)
 3.  Use `ap` for pretty print. see [awesome-print](https://github.com/awesome-print/awesome_print)
 4.  Use `Clipboard.copy` or `Clipboard.paste` to interactive with system clipboard. see [clipboard](https://github.com/janlelis/clipboard)
@@ -137,7 +149,6 @@ but not load, ready to require it, no more. so, it should be safe to use it, eit
 namespace/variables etc.
 
 But, you should only use it in development, though, it was tested is run in container(alpine) too.
-
 
 ## Limit
 
