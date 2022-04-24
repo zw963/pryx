@@ -1,4 +1,7 @@
+	== 0.6.1 2022-04-25
 
+	* Fix remove pry3,pry! frame from up/down/stack pry command
+	
 	== 0.6.0 2022-04-23
 
 	* Add pry-rescue gem, it not auto required by default, but, you can use pry-rescue command from command line.
