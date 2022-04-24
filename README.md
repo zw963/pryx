@@ -143,8 +143,6 @@ But, you should only use it in development, though, it was tested is run in cont
 
   1. `break` not work well if you add more than one break point, but still use `next` goto the next break point,
      See https://github.com/gsamokovarov/break/issues/12
-  2. because `pry!` use binding.of\_caller, when work with pry-stack\_explorer up command, you can see two
-     more stack get pushed. so, you have to up 3 times instead 1 time in normal case.
 
 ## Support
 
