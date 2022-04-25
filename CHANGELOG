@@ -1,3 +1,7 @@
+	== 0.7.0 2022-04-25
+
+	* Fix not work with rails because $RUBYLIB issue.
+	
 	== 0.6.1 2022-04-25
 
 	* Fix remove pry3,pry! frame from up/down/stack pry command
