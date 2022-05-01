@@ -72,6 +72,9 @@ AllCops:
     - 'script/**/*'
     - 'components/**/*'
     - 'lib/pry-remote.rb'
+    - 'lib/pry-state.rb'
+    - 'lib/pry-state/**/*'
+    - 'lib/pry-yes.rb'
     - !ruby/regexp /old_and_unused\.rb$/
 
   TargetRubyVersion:
@@ -141,26 +144,7 @@ Metrics/ClassLength:
 #   Enabled: false
 
 Layout/LineLength:
-  Description: 'Checks that line length does not exceed the configured limit.'
-  StyleGuide: '#max-line-length'
   Enabled: false
-  VersionAdded: '0.25'
-  VersionChanged: '1.4'
-  Max: 120
-  # To make it possible to copy or click on URIs in the code, we allow lines
-  # containing a URI to be longer than Max.
-  AllowHeredoc: true
-  AllowURI: true
-  URISchemes:
-    - http
-    - https
-  # The IgnoreCopDirectives option causes the LineLength rule to ignore cop
-  # directives like '# rubocop: enable ...' when calculating a line's length.
-  IgnoreCopDirectives: true
-  # The IgnoredPatterns option is a list of !ruby/regexp and/or string
-  # elements. Strings will be converted to Regexp objects. A line that matches
-  # any regular expression listed in this option will be ignored by LineLength.
-  IgnoredPatterns: []
 
 Metrics/MethodLength:
   Description: 'Avoid methods longer than 10 lines of code.'
@@ -465,10 +449,9 @@ GraphQL/FieldDefinitions:
 Lint/InterpolationCheck:
   Enabled: false
 
-# 这个目前会引起语法错误.
-Style/SoleNestedConditional:
-  Enabled: false
-
 Style/HashSyntax:
   # always 是默认值
   EnforcedShorthandSyntax: either
+
+Style/FetchEnvVar:
+  Enabled: false
