@@ -4,7 +4,6 @@ require 'pry-power_assert'
 require 'pry-doc'
 
 require 'pry-yes'
-Pry.commands.alias_command 'y', 'yes'
 
 require 'pry-hier'
 
