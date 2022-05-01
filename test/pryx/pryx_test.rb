@@ -3,7 +3,7 @@ require 'pryx'
 
 class PryxTest < Minitest::Test
   def test_looksee
-    "hello".ls1
+    'hello'.ls1
     Kernel.instance_method(:ls1)
     Kernel.instance_method(:ls2)
     Kernel.instance_method(:_load_looksee)
@@ -17,7 +17,7 @@ class PryxTest < Minitest::Test
     Kernel.instance_method(:pry3)
     Kernel.instance_method(:pry?)
     Binding.instance_method(:_pry)
-    assert_raises NameError do |arg|
+    assert_raises NameError do
       Binding.instance_method(:of_caller)
     end
   end

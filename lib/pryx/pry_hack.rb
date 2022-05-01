@@ -59,7 +59,7 @@ module Kernel
   # 1. 单独运行 pry2， 永远不会被拦截,
   # 2. 如果之前运行过 pry1, 此时 pry2 将被拦截, 且只会被拦截一次.
 
-  def pry2(caller=1, remote: nil, port: 9876)
+  def pry2(remote: nil, port: 9876)
     if ENV['Pry2_should_start'] == 'true'
       ENV['Pry2_should_start'] = nil
       pry3(2, remote: remote, port: port)

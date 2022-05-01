@@ -17,6 +17,5 @@ class PryDisasmTest < Minitest::Test
 " do
       PryDisasm.process(100)
     end
-
   end
 end
