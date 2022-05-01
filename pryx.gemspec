@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'pry-doc', '~>1.3'
   s.add_runtime_dependency 'pry-hier', '~>0.1'
   s.add_runtime_dependency 'pry-power_assert', '~>0.0.2'
+  s.add_runtime_dependency 'pry-reload', '~>0.3'
   s.add_runtime_dependency 'pry-rescue', '~>1.5'
   s.add_runtime_dependency 'pry-stack_explorer', '~>0.6'
   s.add_development_dependency 'm', '~>1.6'

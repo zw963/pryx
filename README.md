@@ -98,7 +98,8 @@ Following is pry command available only after start a Pry session:
 5.  Add `pry-aa_ancestors` command for print the class hierarchy, see [pry-aa_ancestors](https://github.com/tbpgr/pry-aa_ancestors)
 6.  Add `up/down/frame/stack` command, see [pry-stack_explorer](https://github.com/pry/pry-stack_explorer)
 7.  Add `yes` or `y` command, see [pry-yes](https://github.com/christofferh/pry-yes)
-8.  Add `pry-disam`, Check following screenshot for a example:
+8.  Add `reload!` command , see [pry-reload](https://github.com/runa/pry-reload)
+9.  Add `pry-disam`, Check following screenshot for a example:
 
 ![pry-disasm](images/disasm.png)
 

@@ -17,6 +17,8 @@ Pry::Commands.alias_command 'aa', 'aa_ancestors'
 require 'pry-stack_explorer'
 require 'pryx/pry-stack_explorer_hack'
 
+require 'pry-reload'
+
 Pry::Commands.block_command 'cc', 'Continue, but stop in pry! breakpoint' do
   Pry.instance_variable_set(:@initial_session, true)
   ENV['Pry_was_started'] = nil
