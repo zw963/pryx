@@ -1,3 +1,8 @@
+	== 0.7.1 2022-05-01
+
+	* Try add pry-reload gem, which add reload! command to pry.
+	* Remove y alias for avoid confusing
+	
 	== 0.7.0 2022-04-25
 
 	* Fix not work with rails because $RUBYLIB issue.
