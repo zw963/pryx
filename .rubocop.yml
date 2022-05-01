@@ -454,21 +454,6 @@ Minitest/AssertInDelta:
 Minitest/MultipleAssertions:
   Enabled: false
 
-# Rails/RefuteMethods:
-#   Enabled: false
-# Rails/AssertNot:
-#   Enabled: false
-# Rails/FindEach:
-#   Enabled: false
-Rails/DurationArithmetic:
-  Enabled: false
-Rails/RefuteMethods:
-  Enabled: false
-Rails/Output:
-  Enabled: false
-Rails/NegateInclude:
-  Enabled: false
-
 GraphQL/OrderedArguments:
   Enabled: false
 
