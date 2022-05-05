@@ -132,11 +132,12 @@ pryx is same as pry, but, with plugins and libraries correct configured.
 
 irbx is same things for irb.
 
-pry! just a alias to `pry-remote` command, when `Kernel#pry!` was intercepted in a background process, 
-you can run `pry!` directly in terminal connect to it.
+`pry!` just a alias to `binding.pry`, but, if process is running on background, it a alias to `binding.remote_pry('0.0.0.0', 9876)`, 
+you can specify host or port manually, like this: `pry!(host: '192.168.1.100')`. 
+in another terminal, you can run `pry!` directly to connect to it use IP + port.
 
-if your's pry-remote server started background on another host, or on a container, you man need
-specify hostname and port, e.g. connnect to 192.168.1.100, with port 9876
+e.g. assume your's pry-remote server started background on another host(192.168.1.100), port 9876
+It maybe in container, you can connect remote pry like this:
 
 ```sh
 $: pry! -s 192.168.1.100 -p 9876
