@@ -25,9 +25,11 @@ end
 module Kernel
   # 运行 pry! 会被拦截, 且只会被拦截一次.
   def pry!(remote: nil, port: 9876)
-    return unless ENV['Pry_was_started'].nil?
+    if Pryx::Background.foreground? and remote.nil?
+      return unless ENV['Pry_was_started'].nil?
 
-    ENV['Pry_was_started'] = 'true'
+      ENV['Pry_was_started'] = 'true'
+    end
 
     pry3(2, remote: remote, port: port)
 
