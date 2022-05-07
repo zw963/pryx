@@ -1,3 +1,8 @@
+	== 0.8.1 2022-05-07
+
+	* Remove break gem source file from pryx because break gem update to 0.40.0
+	  which not require pry-remote hack by default.
+	
 	== 0.8.0 2022-05-05
 
 	* Add break gem into pryx directly instead as runtime dependency,
