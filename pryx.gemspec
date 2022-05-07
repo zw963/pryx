@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.executables                 = `git ls-files -- bin/*`.split("\n").map {|f| File.basename(f) }
 
   s.add_runtime_dependency 'awesome_print', '~>1.9'
-  # s.add_runtime_dependency 'break', '~>0.30'
+  s.add_runtime_dependency 'break', '~>0.40.0'
   s.add_runtime_dependency 'clipboard', '~>1.3'
   s.add_runtime_dependency 'looksee', '~>4.4'
   s.add_runtime_dependency 'pry', '~>0.14'

@@ -19,10 +19,7 @@ if defined? AwesomePrint
   end
 end
 
-# Add break gem into pryx for fix pry-remote issue.
-# See https://github.com/gsamokovarov/break/issues/9
-
-require_relative '../break'
+require 'break'
 Pry.commands.alias_command 'n', 'next'
 Pry.commands.alias_command 's', 'step'
 Pry.commands.alias_command 'w', 'watch' # watch is pry builtin
