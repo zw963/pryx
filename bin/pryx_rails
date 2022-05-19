@@ -6,6 +6,9 @@
 
 $0 = 'pry'
 
+$LOAD_PATH.unshift('.')
+require 'config/environment'
+
 require 'pry'
 require 'pryx'
 require 'pryx/ap_hack'

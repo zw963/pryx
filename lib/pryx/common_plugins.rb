@@ -5,20 +5,7 @@ require 'clipboard'
 # See https://github.com/oggy/looksee/issues/57
 # 但是，ap_hack 必须放到 break_hack 前面，调换顺序，上面的 hack 失效。
 # WARN: 下面两行 require 代码顺序不要换。
-require 'awesome_print'
-
-# AwesomePrint.defaults = {
-#   index: false
-# }
-
-if defined? AwesomePrint
-  if defined? Pry
-    AwesomePrint.pry!
-  else
-    AwesomePrint.irb!
-  end
-end
-
+require 'pryx/ap_hack'
 require 'break'
 Pry.commands.alias_command 'n', 'next'
 Pry.commands.alias_command 's', 'step'
