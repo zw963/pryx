@@ -123,12 +123,12 @@ but above plugins and libraries all correct configured.
 
 we have another Kernel#pry?, which enable `pry-state` automatically, see [pry-state](https://github.com/SudhagarS/pry-state)
 
-### Add command from command line, rescue, kill-pry-rescue, pryx, irbx, pry!
+### Add CLI command, rescue, kill-pry-rescue, pryx, irbx, pry!
 
 `rescue` and `kill-pry-rescue` come from `pry-rescue` gem, it not load by default, but you can use rescue command from command line directly.
 see [pry-rescue](https://github.com/ConradIrwin/pry-rescue)
 
-pryx is same as pry, but, with plugins and libraries correct configured.
+pryx is same as pry, but, with plugins and libraries correct configured, it will load `./config/environment.rb` if this file exists.
 
 irbx is same things for irb.
 

@@ -7,6 +7,6 @@
 #
 
 require 'irb'
-require 'pryx_irb'
+require 'pryx_cli'
 
 IRB.start(__FILE__)
