@@ -1,3 +1,7 @@
+	== 0.8.5 2022-05-20
+
+	* Added Load pry plugins when run pryx CLI.
+
 	== 0.8.4 2022-05-20
 
 	* Fix pryx require bug.
