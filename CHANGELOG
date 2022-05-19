@@ -1,3 +1,8 @@
+	== 0.8.2 2022-05-20
+
+	* Added pryx_rails command for load rails with pryx.
+	* pryx command enable ap by default.
+
 	== 0.8.1 2022-05-07
 
 	* Remove break gem source file from pryx because break gem update to 0.40.0
