@@ -1,3 +1,8 @@
+	== 0.8.3 2022-05-20
+
+	* Removed pryx_rails CLI command
+	* Update pryx, irbx CLI command support autoload './config/environment.rb' if file exists
+	
 	== 0.8.2 2022-05-20
 
 	* Added pryx_rails command for load rails with pryx.
