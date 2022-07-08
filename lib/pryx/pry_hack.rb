@@ -24,7 +24,9 @@ end
 
 module Kernel
   # 运行 pry! 会被拦截, 且只会被拦截一次.
-  def pry!(host: nil, port: 9876)
+  def pry!(host: nil, port: 9876, state: true)
+    require 'pry-state' if state
+
     if Pryx::Background.foreground? and host.nil?
       return unless ENV['Pry_was_started'].nil?
 
