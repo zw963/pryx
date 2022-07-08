@@ -13,6 +13,12 @@ class HookAction
   end
 
   def act
+    # when using guard, locals :e, :lib, :pry_state_prev get printed.
+    # this 'if' cuts them off.
+    if @binding.eval("self.class") == Object
+      return
+    end
+
     if ENV['SHOW_GLOBAL_VARIABLES']
       (binding.eval('global_variables').sort - IGNORABLE_GLOBAL_VARS).each do |var|
         eval_and_print var, var_color: 'white', value_colore: 'yellow'

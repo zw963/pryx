@@ -24,8 +24,11 @@ end
 
 module Kernel
   # 运行 pry! 会被拦截, 且只会被拦截一次.
-  def pry!(host: nil, port: 9876, state: true)
-    require 'pry-state' if state
+  def pry!(host: nil, port: 9876, state: false)
+    # You can use environment variables SHOW_GLOBAL_VARIABLES,
+    # HIDE_INSTANCE_VARIABLES and HIDE_LOCAL_VARIABLES
+    # to customise the kind of variables shown.
+    require_relative '../pry-state' if state
 
     if Pryx::Background.foreground? and host.nil?
       return unless ENV['Pry_was_started'].nil?
@@ -41,19 +44,6 @@ module Kernel
   # 在 pry! 之前如果输入这个，会让下次执行的 pry! 被拦截一次， 而不管之前是否有执行过 pry!
   def repry!
     ENV['Pry_was_started'] = nil
-  end
-
-  # 和 pry! 的差别就是，pry? 使用 pry-state 插件输出当前 context 的很多变量内容。
-  # 注意：不需要总是开启 pry-state，因为有时候会输出太多内容，造成刷屏。
-  def pry?(host: nil, port: 9876)
-    return unless ENV['Pry_was_started'].nil?
-
-    require 'pry-state'
-    ENV['Pry_was_started'] = 'true'
-
-    pry3(2, host: host, port: port)
-
-    # 这里如果有代码, 将会让 pry! 进入这个方法, 因此保持为空.
   end
 
   def pry1
