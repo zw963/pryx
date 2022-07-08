@@ -1,3 +1,8 @@
+	== 0.8.7 2022-07-08
+
+	- Fixed pry-state gemspec version conflict with pry 0.14.1
+	- Removed Kernel#pry? method, because it same as pry!(state: true)
+	
 	== 0.8.6 2022-07-08
 
 	* Removeed pry-reload gem.
