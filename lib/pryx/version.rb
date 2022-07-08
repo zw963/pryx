@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Pryx
-  VERSION = [0, 8, 5]
+  VERSION = [0, 8, 6]
 
   class << VERSION
     include Comparable

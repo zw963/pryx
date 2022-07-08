@@ -1,3 +1,8 @@
+	== 0.8.6 2022-07-08
+
+	* Removeed pry-reload gem.
+	* Added pry-state gem, you can use pry!(state: false) to disable it.
+	
 	== 0.8.5 2022-05-20
 
 	* Added Load pry plugins when run pryx CLI.
