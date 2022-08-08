@@ -19,14 +19,18 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'awesome_print', '~>1.9'
   s.add_runtime_dependency 'break', '~>0.40.0'
   s.add_runtime_dependency 'clipboard', '~>1.3'
-  s.add_runtime_dependency 'looksee', '~>4.4'
   s.add_runtime_dependency 'pry', '~>0.14'
+
+  # Following runtime dependencies and it's dependencies is dynamic loaded when pry! is running.
+  # So, following dependencies can't be required in running in a container.
+  s.add_runtime_dependency 'pry-hier', '~>0.1'
+  s.add_runtime_dependency 'looksee', '~>4.4'
   s.add_runtime_dependency 'pry-aa_ancestors', '~>0.0.1'
   s.add_runtime_dependency 'pry-doc', '~>1.3'
-  s.add_runtime_dependency 'pry-hier', '~>0.1'
   s.add_runtime_dependency 'pry-power_assert', '~>0.0.2'
   s.add_runtime_dependency 'pry-rescue', '~>1.5'
   s.add_runtime_dependency 'pry-stack_explorer', '~>0.6'
+
   s.add_development_dependency 'm', '~>1.6'
   s.add_development_dependency 'minitest'
   s.add_development_dependency 'ritual', '~>0.5'
