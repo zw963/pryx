@@ -259,8 +259,8 @@ Style/TrailingUnderscoreVariable:
 Metrics/ParameterLists:
   Enabled: false
 
-# Style/StringLiterals:
-#   Enabled: false
+Style/StringLiterals:
+  Enabled: false
 
 Layout/MultilineMethodCallIndentation:
   Enabled: false
@@ -438,6 +438,19 @@ Minitest/AssertInDelta:
 Minitest/MultipleAssertions:
   Enabled: false
 
+# Rails/AssertNot:
+#   Enabled: false
+# Rails/FindEach:
+#   Enabled: false
+Rails/DurationArithmetic:
+  Enabled: false
+Rails/RefuteMethods:
+  Enabled: false
+Rails/Output:
+  Enabled: false
+Rails/NegateInclude:
+  Enabled: false
+
 GraphQL/OrderedArguments:
   Enabled: false
 
@@ -449,9 +462,15 @@ GraphQL/FieldDefinitions:
 Lint/InterpolationCheck:
   Enabled: false
 
-Style/HashSyntax:
-  # always 是默认值
-  EnforcedShorthandSyntax: either
+# Style/HashSyntax:
+#   # always 是默认值
+#   EnforcedShorthandSyntax: either
+
+Style/RescueStandardError:
+  EnforcedStyle: implicit
 
 Style/FetchEnvVar:
+  Enabled: false
+
+Gemspec/OrderedDependencies:
   Enabled: false
