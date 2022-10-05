@@ -17,6 +17,11 @@ Pry::Commands.alias_command 'aa', 'aa_ancestors'
 require 'pry-stack_explorer' # Add command `up/down/frame[n]/stack`
 require 'pryx/pry-stack_explorer_hack'
 
+require 'pry-nav'
+Pry.commands.alias_command 'n', 'next'
+Pry.commands.alias_command 's', 'step'
+Pry.commands.alias_command 'w', 'watch' # watch is pry builtin
+
 # Add command `cc`
 Pry::Commands.block_command 'cc', 'Continue, but stop in pry! breakpoint' do
   Pry.instance_variable_set(:@initial_session, true)

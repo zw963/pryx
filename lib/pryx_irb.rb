@@ -7,3 +7,4 @@
 
 require 'pryx/common_plugins'
 require 'pryx'
+require 'pryx/irb_hack'
