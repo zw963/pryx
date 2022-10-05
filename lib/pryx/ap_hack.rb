@@ -5,8 +5,10 @@ require 'awesome_print'
 # }
 
 if defined? AwesomePrint
-  AwesomePrint.pry! if defined? Pry
-
-  # auto ap only works when running with `irbx`
-  AwesomePrint.irb!
+  if defined? Pry
+    AwesomePrint.pry!
+  else
+    # auto ap only works when running with `irbx`
+    AwesomePrint.irb!
+  end
 end
