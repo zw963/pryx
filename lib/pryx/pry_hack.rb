@@ -9,6 +9,8 @@ class Binding
     end
 
     require 'pryx/common_plugins'
+
+    # NOTICE: Ensure pry-navs (in pry_plugins) always required after pry-remote
     require 'pryx/pry_plugins'
 
     if host
