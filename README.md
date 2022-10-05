@@ -1,4 +1,4 @@
-# Pryx [![CI](https://github.com/zw963/pryx/actions/workflows/ci.yml/badge.svg)](https://github.com/zw963/pryx/actions/workflows/ci.yml)[![Gem Version](https://badge.fury.io/rb/pryx.svg)](http://badge.fury.io/rb/pryx)![](https://ruby-gem-downloads-badge.herokuapp.com/pryx?type=total)
+# Pryx [![CI](https://github.com/zw963/pryx/actions/workflows/ci.yml/badge.svg)](https://github.com/zw963/pryx/actions/workflows/ci.yml) [![Gem Version](https://badge.fury.io/rb/pryx.svg)](http://badge.fury.io/rb/pryx) ![](https://ruby-gem-downloads-badge.herokuapp.com/pryx?type=total)
 
 Three Virtues of a Programmer: Laziness, Impatience, and Hubris. -- Larry Wall, the author of Perl Programming language.
 
