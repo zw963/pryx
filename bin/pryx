@@ -7,8 +7,8 @@
 $0 = 'pry'
 
 require 'pry'
-require 'pryx/pry_plugins'
 require 'pryx_cli'
+require 'pryx/pry_plugins'
 
 # Process command line options and run Pry
 opts = Pry::CLI.parse_options

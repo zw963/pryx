@@ -9,4 +9,8 @@
 require 'irb'
 require 'pryx_cli'
 
+# Fix `irb: warn: can't alias ls from irb_ls` issue.
+# See: https://github.com/oggy/looksee/issues/56
+Looksee.rename :_ls
+
 IRB.start(__FILE__)
