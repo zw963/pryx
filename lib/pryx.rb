@@ -3,6 +3,7 @@
 require 'pryx/version'
 require 'pryx/background'
 require 'pryx/trap_backtrace'
+require 'pryx/looksee_hack'
 require 'pryx/pry_hack'
 require 'pryx/irb_hack'
 

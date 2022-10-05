@@ -24,15 +24,15 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          - macos-latest
+          # - macos-latest
         ruby:
-          - '2.6'
-          - '2.7'
-          - '3.0'
+          # - '2.6'
+          # - '2.7'
+          # - '3.0'
           - '3.1'
-        include:
-          - os: windows-latest
-            ruby: ruby
+        # include:
+        #   - os: windows-latest
+        #     ruby: ruby
 
     steps:
       - name: repo checkout
@@ -44,6 +44,6 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
 
-      - name: rake test
-        run: rake
+      - name: test
+        run: bundle exec rake
         timeout-minutes: 3
