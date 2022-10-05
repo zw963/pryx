@@ -11,12 +11,8 @@
 
 module Kernel
   def _load_looksee
-    case RbConfig::CONFIG['ruby_version']
-    when '1.9.0'...'2.1.0'
-      require 'old_looksee'
-    when '2.1.0'...'3.2.0'
-      require 'looksee'
-    end
+    require 'looksee'
+
     Looksee.rename :ls_looksee
 
     Looksee.editor = '.emacsclient +%l %f' # e.g. [].ls1.edit :to_set
