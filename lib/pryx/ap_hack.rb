@@ -4,10 +4,4 @@ require 'awesome_print'
 #   index: false
 # }
 
-if defined? AwesomePrint
-  if defined? Pry
-    AwesomePrint.pry!
-  else
-    AwesomePrint.irb!
-  end
-end
+AwesomePrint.pry! if defined? AwesomePrint && defined? Pry
