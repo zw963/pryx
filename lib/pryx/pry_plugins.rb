@@ -18,12 +18,9 @@ require 'pry-stack_explorer' # Add command `up/down/frame[n]/stack`
 require 'pryx/pry-stack_explorer_hack'
 
 require 'pry-nav'
-Pry.commands.alias_command 'n', 'next'
-Pry.commands.alias_command 's', 'step'
-Pry.commands.alias_command 'w', 'watch' # watch is pry builtin
 
 # Add command `cc`
-Pry::Commands.block_command 'cc', 'Continue, but stop in pry! breakpoint' do
+Pry::Commands.block_command 'cc', 'Continue, but stop in pry! breakpoint too' do
   Pry.instance_variable_set(:@initial_session, true)
   ENV['Pry_was_started'] = nil
   throw(:breakout)
@@ -31,7 +28,9 @@ end
 
 Pry.commands.alias_command 'wai', 'whereami' # Add command alias `wai`
 
-# Hit Enter repeat last command
+# Hit Enter repeat last command, this feature will make auto-watch unavailable.
 Pry::Commands.command(/^$/, 'repeat last command') do
-  pry_instance.run_command Pry.history.to_a.last
+  run Pry.history.to_a.last
 end
+# So, add a new alias w for user use it manually
+Pry.commands.alias_command 'w', 'watch' # watch is pry builtin
