@@ -1,3 +1,9 @@
+
+	== 0.10.0 2022-11-08
+
+	Update looksee to 0.5.0 to fix many issues, see changelog.
+	https://github.com/oggy/looksee/blob/master/CHANGELOG
+	
 	== 0.9.2 2022-10-06
 	
 	- switch to use github actions
