@@ -141,9 +141,7 @@ namespace/variables etc.
 But, you should only use it in development, though, it was tested is run in container(alpine) too.
 
 ## Limit
-
-  1. When use looksee with irb for Ruby 3.1.x, looksee output color was not correct displayed.
-     check: https://github.com/oggy/looksee/issues/57
+  
   2. Pry's show auto-watch when not work, because `Enter` key rebinding to `run the last command`.
      i consider this is more useful, you can always use `w` alias to see the watch changes.
 
