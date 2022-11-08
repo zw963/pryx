@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
 
   # Following runtime dependencies and it's dependencies is dynamic loaded when pry! is running.
   # So, following dependencies can't be required in running in a container.
-  s.add_runtime_dependency 'looksee', '~>4.4'
+  s.add_runtime_dependency 'looksee', '~>5.0'
   s.add_runtime_dependency 'pry-aa_ancestors', '~>0.0.1'
   s.add_runtime_dependency 'pry-doc', '~>1.3'
   s.add_runtime_dependency 'pry-hier', '~>0.1'
