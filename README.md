@@ -1,39 +1,41 @@
 # Pryx [![CI](https://github.com/zw963/pryx/actions/workflows/ci.yml/badge.svg)](https://github.com/zw963/pryx/actions/workflows/ci.yml) [![Gem Version](https://badge.fury.io/rb/pryx.svg)](http://badge.fury.io/rb/pryx) ![](https://ruby-gem-downloads-badge.herokuapp.com/pryx?type=total)
 
-Three Virtues of a Programmer: Laziness, Impatience, and Hubris. -- Larry Wall, the author of Perl Programming language.
+> Three Virtues of a Programmer: Laziness, Impatience, and Hubris.
+> 
+> -- Larry Wall, author of Perl
 
 ## Getting Started
 
 Don't add this gem into bundler's Gemfile.
 
-Instead, install it directly via RubyGems
+Instead, install it directly via RubyGems:
 
-    $ gem install pryx
+    gem install pryx
 	
-Then user can use pryx cross all your's project.	
+Then you can use `pryx` across all your projects!
 
 ## Usage
 
-Before use it, you need set `RUBYOPT` variable.
+Before using pryx, you need set the `RUBYOPT` environment variable.
 
-You can do this two way in a terminal.
+You can do this two ways in a terminal.
 
 ```sh
 $: export RUBYOPT+=' -rpryx'
-$: ruby your_file.rb              # add pry! in your_file for start pry session
+$: ruby your_file.rb              # add pry! in your_file to start pry session
 
 ```
 
-or Run your's code directly use:
+or, run your code directly using:
 
 
 ```sh
-$: RUBYOPT+='-rpryx' ruby your_file.rb  # add pry! in your_file for start pry session
+$: RUBYOPT+='-rpryx' ruby your_file.rb  # add pry! in your_file to start pry session
 ```
 
-Then, try add `pry!` into your's ruby code, then run it, have fun!
+Then, try adding `pry!` into your ruby code, run it, and have fun!
 
-Following is a example, assume there is a `test.rb` with content:
+The following example assumes there is a `test.rb` with the content:
 
 ```rb
 # test.rb
@@ -48,42 +50,41 @@ Then, when you run `RUBYOPT='-rpryx' ruby test.rb`
 ![pry.png](images/pry!.png)
 
 You can even connect to a pry session started from remote or background process 
-use http connection.
+using HTTP connection.
 
 ![pry_remote.png](images/pry_remote.png)
 
-Until now, you've only seen the tip of the iceberg, please have a try.
+But that's just the tip of the iceberg, give it a try!
 
+The preferred way to use pryx is add `export RUBYOPT+=' -rpryx'` to your system start script.
 
-the preferred way to use pryx is add `export RUBYOPT+=' -rpryx'` to system start script.
-
-It should almost not affect your's code too much, only special methods defined into Kernel#, 
+It shouldn't affect your code too much, only special methods defined into Kernel#, 
 no any gem be required before you invoke those added methods.
 
-## useful command which added directly to Kernel#
+## Useful command added directly to Kernel#
 
 ### Kernel#pry!
 
-start a pry session, this session only can be intercept once if add into a loop.
+start a pry session, this session can only be intercepted once if added into a loop.
 when used with a rails/roda web server, it only intercept one per request.
 
-we have IRB equivalent, named `irb!`, though, only a little feature support it.
+We have the IRB equivalent, named `irb!`, though it only supports a small number of features.
 
-Following feature both available when start a Pry or IRB session:
+The following feature both available when start a Pry or IRB session:
 
-1.  Add `Kernel#ls1`(use ls1 to avoid conflict with pry builtin ls command), see [looksee](https://github.com/oggy/looksee)
+1.  Add `Kernel#ls1`(use ls1 to avoid conflict with pry builtin `ls` command), see [looksee](https://github.com/oggy/looksee)
 2.  Use `ap` for pretty print. see [awesome-print](https://github.com/awesome-print/awesome_print)
-3.  Use `Clipboard.copy` or `Clipboard.paste` to interactive with system clipboard. see [clipboard](https://github.com/janlelis/clipboard)
+3.  Use `Clipboard.copy` or `Clipboard.paste` to interact with system clipboard. see [clipboard](https://github.com/janlelis/clipboard)
 
-Following feature available only for a Pry session:
+The following feature available only for a Pry session:
 
 1.  Add `next/step/continue/up/down` command for debug, use [pry-nav](https://github.com/nixme/pry-nav) [pry-stack_explorer](https://github.com/pry/pry-stack_explorer)
-2.  Add `$/?` command for see source, see [pry-doc](https://github.com/pry/pry-doc)
+2.  Add `$/?` command to see source, see [pry-doc](https://github.com/pry/pry-doc)
 3.  pry-remote debug support. you still use `pry!` no changes, it will use `pry-remote` automatically
-    if current ruby process was running on backround, then, it will use pry-remote, and listen on 0.0.0.0:9876,
+    if current ruby process was running in background, then, it will use pry-remote, and listen on 0.0.0.0:9876,
     Then, you can connect to it from another terminal! see [pry-remote](https://github.com/Mon-Ouie/pry-remote)
 4.  Add `pa` command, see [pry-power_assert](https://github.com/yui-knk/pry-power_assert)
-5.  Add `hier` command for print the class hierarchies, see [pry-hier](https://github.com/phaul/pry-hier)
+5.  Add `hier` command for print the class heirarchies, see [pry-hier](https://github.com/phaul/pry-hier)
 6.  Add `pry-aa_ancestors` command for print the class hierarchy, see [pry-aa_ancestors](https://github.com/tbpgr/pry-aa_ancestors)
 7.  Add `up/down/frame/stack` command, see [pry-stack_explorer](https://github.com/pry/pry-stack_explorer)
 8.  Add `yes` or `y` command, see [pry-yes](https://github.com/christofferh/pry-yes)
@@ -91,9 +92,9 @@ Following feature available only for a Pry session:
 
 ![pry-disasm](images/disasm.png)
 
-### Kernel#pry1 Kernel#pry2  (sorry for the bad name, please create a issue you have a better one)
+### Kernel#pry1 Kernel#pry2  (sorry for the bad name, please create an issue if you have a better one)
 
-pry2 do nothing, but it will be interceptd and start a pry session only after pry1 is running.
+pry2 do nothing, but it will be intercepted and start a pry session only after pry1 is running.
 
 I haven use this hack for avoid pry session start on working place.
 
@@ -106,7 +107,7 @@ we have irb1 and irb2 too.
 
 ### Kernel#pry3
 
-It just normal `binding.pry`, that is, will always be intercept if code can reach.
+It is just a normal `binding.pry`, that is, will always be intercept if code can reach.
 but above plugins and libraries all correct configured.
 
 we have another Kernel#pry?, which enable `pry-state` automatically, see [pry-state](https://github.com/SudhagarS/pry-state)
@@ -133,12 +134,12 @@ $: pry! -s 192.168.1.100 -p 9876
 
 ## Philosophy
 
-This gem is design to Minimal impact on target ruby code, in fact, after `require 'pryx'` or `RUBYOPT='-rpryx'`
-(they do same thing), only several instance method be defined on Kernel, and several gems add to $LOAD_PATH, 
-but not load, ready to require it, no more. so, it should be safe to use it, either affect performance nor
+This gem is designed to have a minimal impact on target ruby code, in fact, after `require 'pryx'` or `RUBYOPT='-rpryx'`
+(they do same thing), only several instance methods will be defined on Kernel, and several gems added to $LOAD_PATH, 
+but not load, ready to require it, no more. So, it should be safe to use it, neither affect performance nor
 namespace/variables etc.
 
-But, you should only use it in development, though, it was tested is run in container(alpine) too.
+But, you should only use it in development, though, it was tested is run in container (alpine) too.
 
 ## Limit
   
