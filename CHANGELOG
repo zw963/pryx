@@ -1,4 +1,6 @@
 
+        == 0.10.1 2024-01-23
+        Update pry-doc to latest version.
 	== 0.10.0 2022-11-08
 
 	Update looksee to 0.5.0 to fix many issues, see changelog.
