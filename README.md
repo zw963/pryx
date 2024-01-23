@@ -4,6 +4,8 @@ Three Virtues of a Programmer: Laziness, Impatience, and Hubris. -- Larry Wall, 
 
 ## Getting Started
 
+[NOTICE] Check [What's new in Ruby 3.2's IRB?](https://st0012.dev/whats-new-in-ruby-3-2-irb) for the introduced new feature of Ruby 3.2 IRB which includes part of feature this gem provides.
+
 Don't add this gem into bundler's Gemfile.
 
 Instead, install it directly via RubyGems
