@@ -14,12 +14,54 @@ Then user can use pryx cross all your's project.
 
 ## Usage
 
+At first, it is just pry, with more extensions.
+
+you can always run it with `pryx`.
+
+```sh
+ ╰─ $ pryx
+[1] pry(main)> ? Array#each_with_object
+
+From: enum.c (C Method):
+Owner: Enumerable
+Visibility: public
+Signature: each_with_object(arg1)
+Number of lines: 20
+
+Calls the block once for each element, passing both the element
+and the given object:
+
+  (1..4).each_with_object([]) {|i, a| a.push(i**2) }
+  # => [1, 4, 9, 16]
+
+  {foo: 0, bar: 1, baz: 2}.each_with_object({}) {|(k, v), h| h[v] = k }
+  # => {0=>:foo, 1=>:bar, 2=>:baz}
+
+With no block given, returns an Enumerator.
+
+static VALUE
+enum_each_with_object(VALUE obj, VALUE memo)
+{
+    RETURN_SIZED_ENUMERATOR(obj, 1, &memo, enum_size);
+
+    rb_block_call(obj, id_each, 0, 0, each_with_object_i, memo);
+
+    return memo;
+}
+[2] pry(main)> 
+
+```
+
+Second, it add a new `Kernel#pry!`, you can use it instead of `binding.pry`.
+ It's not just an alias, there are more.
+
 Before use it, you need set `RUBYOPT` variable.
 
 You can do this two way in a terminal.
 
 ```sh
-$: export RUBYOPT+=' -rpryx'
+$: export RUBYOPT+=' -rpryx'   # For BASH only
+$: export RUBYOPT="$RUBYOPT -rpryx" # For others shell
 $: ruby your_file.rb              # add pry! in your_file for start pry session
 
 ```
@@ -30,8 +72,6 @@ or Run your's code directly use:
 ```sh
 $: RUBYOPT+='-rpryx' ruby your_file.rb  # add pry! in your_file for start pry session
 ```
-
-Then, try add `pry!` into your's ruby code, then run it, have fun!
 
 Following is a example, assume there is a `test.rb` with content:
 
