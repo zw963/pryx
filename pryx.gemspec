@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   # So, following dependencies can't be required in running in a container.
   s.add_runtime_dependency 'looksee', '~>5.0'
   s.add_runtime_dependency 'pry-aa_ancestors', '~>0.0.1'
-  s.add_runtime_dependency 'pry-doc', '~>1.3'
+  s.add_runtime_dependency 'pry-doc', '~>1.5'
   s.add_runtime_dependency 'pry-hier', '~>0.1'
   s.add_runtime_dependency 'pry-power_assert', '~>0.0.2'
   s.add_runtime_dependency 'pry-rescue', '~>1.5'
