@@ -1,3 +1,6 @@
+	== 0.10.3 2024-02-08
+	Fixed: only install redline-ext for Ruby 3.3.0 and later.
+	
 	== 0.10.2 2024-02-08
 
 	Add readline-ext gem for keeping the old Pry behavior when use with Ruby 3.3 which use reline by default.
