@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+case RbConfig::CONFIG['ruby_version']
+when '3.3.0'...'3.4.0'
+  require "readline"
+end
+
 require 'pryx/version'
 require 'pryx/background'
 require 'pryx/trap_backtrace'
