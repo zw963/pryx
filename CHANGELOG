@@ -1,4 +1,9 @@
+	== 0.10.2 2024-02-08
 
+	Add readline-ext gem for keeping the old Pry behavior when use with Ruby 3.3 which use reline by default.
+	Checking https://github.com/pry/pry/issues/2297 for more details.
+	
+	
         == 0.10.1 2024-01-23
         Update pry-doc to latest version.
 	== 0.10.0 2022-11-08
