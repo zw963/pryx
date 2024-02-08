@@ -20,7 +20,10 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'clipboard', '~>1.3'
   s.add_runtime_dependency 'pry', '~>0.14'
   s.add_runtime_dependency 'pry-nav', '~>1.0.0'
-  s.add_runtime_dependency 'readline-ext', '~>0.2.0'
+  case RbConfig::CONFIG['ruby_version']
+  when '3.3.0'...'3.4.0'
+    s.add_runtime_dependency 'readline-ext', '~>0.2.0'
+  end
 
   # Following runtime dependencies and it's dependencies is dynamic loaded when pry! is running.
   # So, following dependencies can't be required when running in a container.
