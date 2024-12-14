@@ -17,9 +17,8 @@ Gem::Specification.new do |s|
   s.executables                 = `git ls-files -- bin/*`.split("\n").map {|f| File.basename(f) }
 
   s.add_runtime_dependency 'awesome_print', '~>1.9'
-  s.add_runtime_dependency 'clipboard', '~>1.3'
-  s.add_runtime_dependency 'pry', '~>0.14'
-  s.add_runtime_dependency 'pry-nav', '~>1.0.0'
+  s.add_runtime_dependency 'clipboard', '~>2.0'
+  s.add_runtime_dependency 'pry', '~>0.15'
   case RbConfig::CONFIG['ruby_version']
   when '3.3.0'...'3.4.0'
     s.add_runtime_dependency 'readline-ext', '~>0.2.0'
