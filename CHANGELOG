@@ -1,3 +1,11 @@
+	== 0.11.0 2024-12-14
+
+	- Updated pry to 0.15 which have good reline support!
+	- Added the source of pry-nav instead install gem because pry-nav blocked the update of pry to 0.15
+	- Update clipboard to 2.0
+
+	Fixed: When run pry! in a background process, it's only intercept once (same behavior as run in foreground)
+	
 	== 0.10.3 2024-02-08
 	Fixed: only install redline-ext for Ruby 3.3.0 and later.
 	
