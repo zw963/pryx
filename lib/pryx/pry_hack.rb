@@ -32,11 +32,9 @@ module Kernel
     # to customise the kind of variables shown.
     require_relative '../pry-state' if state
 
-    if Pryx::Background.foreground? and host.nil?
-      return unless ENV['Pry_was_started'].nil?
+    return unless ENV['Pry_was_started'].nil?
 
-      ENV['Pry_was_started'] = 'true'
-    end
+    ENV['Pry_was_started'] = 'true'
 
     pry3(2, host: host, port: port)
 
