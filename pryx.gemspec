@@ -4,7 +4,7 @@ require File.expand_path("../lib/#{name}/version", __FILE__)
 Gem::Specification.new do |s|
   s.name                        = name
   s.version                     = Pryx::VERSION
-  s.required_ruby_version       = '>= 2.6'
+  s.required_ruby_version       = '>= 2.7'
   s.authors                     = ['Billy.Zheng(zw963)']
   s.email                       = ['vil963@gmail.com']
   s.summary                     = 'pry extension tools!'
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.executables                 = `git ls-files -- bin/*`.split("\n").map {|f| File.basename(f) }
 
   s.add_runtime_dependency 'awesome_print', '~>1.9'
-  s.add_runtime_dependency 'clipboard', '~>2.0'
+  s.add_runtime_dependency 'clipboard', '~>1.4'
   s.add_runtime_dependency 'pry', '~>0.15'
 
   # Following runtime dependencies and it's dependencies is dynamic loaded when pry! is running.
