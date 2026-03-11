@@ -1,5 +1,6 @@
 require 'test_helper'
 require 'pryx'
+require "power_assert"
 
 class PryxTest < Minitest::Test
   def test_looksee
