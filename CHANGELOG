@@ -1,3 +1,8 @@
+	== 0.12.2 2026-03-12
+	- downgrade minitest to resolve ruby version conflict
+	- Add more require test.
+	- require minimum ruby version 3.1
+	
 	== 0.12.1 2026-03-11
 	- Added unmaintained pry-stack_explorer gem into pryx instead of as dependency.
 	- Update binding_of_caller to 2.0.0
